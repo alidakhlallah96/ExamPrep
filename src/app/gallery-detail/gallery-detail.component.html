@@ -1,0 +1,14 @@
+<div *ngIf="artPiece; else notFound">
+  <h2>{{ artPiece.name }}</h2>
+  <img [src]="artPiece.imageUrl" [alt]="artPiece.name" width="320" />
+  <p><strong>Artist:</strong> {{ artPiece.artist }}</p>
+  <p><strong>Year:</strong> {{ artPiece.yearCreated }}</p>
+  <p>{{ artPiece.description }}</p>
+
+  <p><a routerLink="/art">Back to Gallery</a></p>
+</div>
+
+<ng-template #notFound>
+  <p>Art piece not found.</p>
+  <p><a routerLink="/art">Back to Gallery</a></p>
+</ng-template>
